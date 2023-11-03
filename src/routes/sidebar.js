@@ -53,7 +53,7 @@ const routes = [
         name: '404',
       },
       {
-        path: '/app/blank',
+        path: '/blank',
         name: 'Blank',
       },
     ],

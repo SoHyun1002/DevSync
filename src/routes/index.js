@@ -2,6 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Dashboard from '@/pages/Dashboard.vue'
 import Home from '@/pages/Home.vue'
 import Page404 from '@/pages/Page404.vue'
+import Login from '@/pages/Login.vue'
+import CreateAccount from '@/pages/CreateAccount.vue'
+import ForgotPassword from '@/pages/ForgotPassword.vue'
+import Blank from '@/pages/Blank.vue'
+
 
 /**
  * ⚠ These are internal routes!
@@ -21,6 +26,22 @@ const routes = [
   {
     path: '/home', // the url
     component: Home, // view rendered
+  },
+  {
+    path: '/login', // the url
+    component: Login, // view rendered
+  },
+  {
+    path: '/create-account', // the url
+    component: CreateAccount, // view rendered
+  },
+  {
+    path: '/forgot-password', // the url
+    component: ForgotPassword, // view rendered
+  },
+  {
+    path: '/blank', // the url
+    component: Blank, // view rendered
   },
 //   {
 //     path: '/forms',
@@ -46,11 +67,11 @@ const routes = [
 //     path: '/tables',
 //     component: Tables,
 //   },
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/404'
+  // {
+  //   path: '/:pathMatch(.*)*',
+  //   redirect: '/404'
     
-  },
+  // },
   {
     path: '/404',
     component: Page404,
