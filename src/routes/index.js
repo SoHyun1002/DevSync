@@ -6,6 +6,9 @@ import Login from '@/pages/Login.vue'
 import CreateAccount from '@/pages/CreateAccount.vue'
 import ForgotPassword from '@/pages/ForgotPassword.vue'
 import Blank from '@/pages/Blank.vue'
+import CodeReviews from '@/pages/CodeReviews.vue'
+import Forms from '@/pages/Forms.vue'
+
 
 
 /**
@@ -42,6 +45,14 @@ const routes = [
   {
     path: '/blank', // the url
     component: Blank, // view rendered
+  },
+  {
+    path: '/codereviews', // the url
+    component: CodeReviews, // view rendered
+  },
+{
+    path: '/forms',
+    component: Forms,
   },
 //   {
 //     path: '/forms',
