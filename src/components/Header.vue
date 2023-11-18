@@ -179,7 +179,7 @@ const { toggleSideMenu } = defineProps(['toggleSideMenu']);
                         href="#"
                       >
                         <OutlinePersonIcon class="w-4 h-4 mr-3" aria-hidden="true" />
-                        <span>Profile</span>
+                        <span>프로필</span>
                       </a>
                     </li>
                     <li class="flex">
@@ -188,7 +188,7 @@ const { toggleSideMenu } = defineProps(['toggleSideMenu']);
                         href="#"
                       >
                         <OutlineCogIcon class="w-4 h-4 mr-3" aria-hidden="true" />
-                        <span>Settings</span>
+                        <span>설정</span>
                       </a>
                     </li>
                     <li class="flex">
@@ -198,7 +198,7 @@ const { toggleSideMenu } = defineProps(['toggleSideMenu']);
                         @click="alert('Log out!')"
                       >
                         <OutlineLogoutIcon class="w-4 h-4 mr-3" aria-hidden="true" />
-                        <span>Log out</span>
+                        <span>로그아웃</span>
                       </a>
                     </li>
                   </ul>

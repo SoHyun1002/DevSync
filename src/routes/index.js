@@ -8,6 +8,7 @@ import ForgotPassword from '@/pages/ForgotPassword.vue'
 import Blank from '@/pages/Blank.vue'
 import CodeReviews from '@/pages/CodeReviews.vue'
 import Forms from '@/pages/Forms.vue'
+import ReadMore from '@/pages/ReadMore.vue'
 
 
 
@@ -53,6 +54,10 @@ const routes = [
 {
     path: '/forms',
     component: Forms,
+  },
+  {
+    path: '/readmore',
+    component: ReadMore,
   },
 //   {
 //     path: '/forms',
