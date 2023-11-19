@@ -26,27 +26,27 @@
                 회원 가입
               </h1>
               <label class="block text-sm ">
-                <span class="text-gray-700 dark:text-gray-400 ">Email</span>
+                <span class="text-gray-700 dark:text-gray-400 ">이메일</span>
                 <input
-                  class="border-4 border-indigo-500/30 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  class="bg-gray-100 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Email"
                 />
               </label>
               <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Password</span>
+                <span class="text-gray-700 dark:text-gray-400">비밀번호</span>
                 <input
-                  class="border-4 border-indigo-500/30 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="PW"
+                  class="bg-gray-100 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="pw"
                   type="password"
                 />
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">
-                  Confirm password
+                  비밀번호 재입력
                 </span>
                 <input
-                  class="border-4 border-indigo-500/30 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="PW"
+                  class="bg-gray-100 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="pw"
                   type="password"
                 />
               </label>
@@ -108,7 +108,7 @@
               <p class="mt-4">
                 <a
                   class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  href="./login.html"
+                  href="./login"
                 >
                   이미 계정이 있으신가요?
                 </a>

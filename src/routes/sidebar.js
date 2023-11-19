@@ -14,48 +14,48 @@ const routes = [
   {
     path: '/codereviews',
     icon: 'FormsIcon',
-    name: 'Code Reviews',
+    name: '코드 리뷰',
   },
   {
     path: '/question',
     icon: 'CardsIcon',
-    name: 'Questions',
+    name: '질문',
   },
   {
     path: '/vote',
     icon: 'ChartsIcon',
-    name: 'Votes',
+    name: '투표',
   },
   {
     path: '/studygroup',
     icon: 'ButtonsIcon',
-    name: 'Study Group',
+    name: '스터디 그룹',
   },
   {
     icon: 'PagesIcon',
-    name: 'Pages',
+    name: '계정 관리',
     routes: [
       // submenu
       {
         path: '/login',
-        name: 'Login',
+        name: '로그인',
       },
       {
         path: '/create-account',
-        name: 'Create account',
+        name: '회원 가입',
       },
       {
         path: '/forgot-password',
-        name: 'Forgot password',
+        name: '비밀번호 찾기/변경',
       },
-      {
-        path: '/app/404',
-        name: '404',
-      },
-      {
-        path: '/blank',
-        name: 'Blank',
-      },
+      // {
+      //   path: '/app/404',
+      //   name: '404',
+      // },
+      // {
+      //   path: '/blank',
+      //   name: 'Blank',
+      // },
     ],
   },
 ]

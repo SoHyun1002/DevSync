@@ -28,8 +28,8 @@
               <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Email</span>
                 <input
-                  class="border-4 border-indigo-500/30 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="email@asdf.com"
+                  class="bg-gray-100 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="abcd123@email.com"
                 />
               </label>
 

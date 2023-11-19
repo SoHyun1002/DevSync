@@ -28,14 +28,14 @@
               <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Email</span>
                 <input
-                  class="border-4 border-indigo-500/30 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  class="rounded-md bg-gray-100 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="ID"
                 />
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Password</span>
                 <input
-                  class="border-4 border-indigo-500/30 rounded-md block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  class="rounded-md block w-full mt-1 bg-gray-100 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="PW"
                   type="password"
                 />
@@ -85,19 +85,23 @@
               <p class="mt-4">
                 <a
                   class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  href="./forgot-password.html"
+                  href="./forgot-password"
                 >
                   비밀번호를 잊으셨나요?
                 </a>
               </p>
+
+
               <p class="mt-1">
                 <a
                   class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  href="./create-account.html"
+                  href="./create-account"
                 >
                   계정 생성하기
                 </a>
               </p>
+
+
             </div>
           </div>
         </div>
