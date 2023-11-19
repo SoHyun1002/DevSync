@@ -56,7 +56,7 @@ const routes = [
     component: Forms,
   },
   {
-    path: '/readmore',
+    path: '/readmore/:id',
     component: ReadMore,
   },
 //   {

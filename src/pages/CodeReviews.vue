@@ -52,7 +52,7 @@
               </td>
               
               <td class="h-1 w-1/3 text-sm">
-                <router-link to="/readmore">
+                <router-link :to="'/readmore/' + post.id">
                   {{ post.title }}
                 </router-link>
               </td>
