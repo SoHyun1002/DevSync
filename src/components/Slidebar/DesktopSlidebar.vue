@@ -2,7 +2,7 @@
 import SidebarContent from '@components/Slidebar/SidebarContent.vue';
 </script>
 <template>
-    <aside className="z-30 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 lg:block">
+    <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
       <SidebarContent />
     </aside>
 </template>
