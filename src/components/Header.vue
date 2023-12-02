@@ -1,35 +1,3 @@
-<script setup>
-import { 
-  MenuIcon, 
-  SearchIcon, 
-  SunIcon, 
-  MoonIcon, 
-  OutlinePersonIcon, 
-  OutlineCogIcon, 
-  OutlineLogoutIcon 
-} from '@/icons'
-
-import { useDark, useToggle } from '@vueuse/core'
-import { ref } from 'vue'
-
-const dark = useDark()
-const toggleTheme = useToggle(dark)
-
-const isNotificationsMenuOpen = ref(false)
-const isProfileMenuOpen = ref(false)
-
-function toggleNotificationsMenu() {
-    isNotificationsMenuOpen.value = !isNotificationsMenuOpen.value
-    isProfileMenuOpen.value = false
-}
-function toggleProfileMenu() {
-    isProfileMenuOpen.value = !isProfileMenuOpen.value
-    isNotificationsMenuOpen.value = false
-}
-
-
-const { toggleSideMenu } = defineProps(['toggleSideMenu']);
-</script>
 <template>
     <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
         <div class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
@@ -195,7 +163,7 @@ const { toggleSideMenu } = defineProps(['toggleSideMenu']);
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                         href="#"
-                        @click="alert('Log out!')"
+                        @click="handleSignOut"
                       >
                         <OutlineLogoutIcon class="w-4 h-4 mr-3" aria-hidden="true" />
                         <span>로그아웃</span>
@@ -208,3 +176,48 @@ const { toggleSideMenu } = defineProps(['toggleSideMenu']);
         </div>
     </header>
 </template>
+<script setup>
+import { 
+  MenuIcon, 
+  SearchIcon, 
+  SunIcon, 
+  MoonIcon, 
+  OutlinePersonIcon, 
+  OutlineCogIcon, 
+  OutlineLogoutIcon 
+} from '@/icons'
+
+import { useDark, useToggle } from '@vueuse/core'
+import { ref } from 'vue'
+
+const dark = useDark()
+const toggleTheme = useToggle(dark)
+
+const isNotificationsMenuOpen = ref(false)
+const isProfileMenuOpen = ref(false)
+
+function toggleNotificationsMenu() {
+    isNotificationsMenuOpen.value = !isNotificationsMenuOpen.value
+    isProfileMenuOpen.value = false
+}
+function toggleProfileMenu() {
+    isProfileMenuOpen.value = !isProfileMenuOpen.value
+    isNotificationsMenuOpen.value = false
+}
+
+
+const { toggleSideMenu } = defineProps(['toggleSideMenu']);
+
+// logout
+
+import { signOut } from 'aws-amplify/auth';
+
+async function handleSignOut() {
+  try {
+    await signOut();
+    // isModalOpen.value = true
+  } catch (error) {
+    console.log('error signing out: ', error);
+  }
+}
+</script>

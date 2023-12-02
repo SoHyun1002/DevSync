@@ -523,18 +523,4 @@
 <script setup>
 import Markdown from 'vue3-markdown-it';
 import { ref } from 'vue';
-import axios from 'axios';
-
-const source = "# 촤꼬질숭이"
-var apiData = ref(null)
-
-
-axios.get("https://0vtq3cupmh.execute-api.ap-northeast-2.amazonaws.com/default/testFunction")
-        .then(response => {
-          console.log("서버 응답:", response.data[1].tag);
-          apiData = response.data
-        })
-        .catch(error => {
-          console.error("에러:", error);
-        });
 </script>
