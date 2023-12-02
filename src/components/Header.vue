@@ -117,6 +117,7 @@
                 </li>
               <!-- Profile menu -->
               <li class="relative">
+                {{username}}
                 <button
                   class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
                   @click="toggleProfileMenu"
@@ -188,7 +189,7 @@ import {
 } from '@/icons'
 
 import { useDark, useToggle } from '@vueuse/core'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const dark = useDark()
 const toggleTheme = useToggle(dark)
@@ -210,14 +211,32 @@ const { toggleSideMenu } = defineProps(['toggleSideMenu']);
 
 // logout
 
-import { signOut } from 'aws-amplify/auth';
+import { signOut, getCurrentUser } from 'aws-amplify/auth';
+import { ConsoleLogger } from 'aws-amplify/utils';
 
 async function handleSignOut() {
   try {
     await signOut();
+    username.value = ''
     // isModalOpen.value = true
   } catch (error) {
     console.log('error signing out: ', error);
   }
 }
+
+const username = ref('')
+
+onMounted(()=>{
+  currentAuthenticatedUser()
+})
+async function currentAuthenticatedUser() {
+  try {
+    const user = await getCurrentUser();
+    username.value = user.username
+    console.log(user)
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 </script>

@@ -88,10 +88,6 @@
     </div> -->
     <!-- <hr class="my-2 mx-3 dark:border-gray-400"> -->
     <div class="px-6 py-4">
-        <input type="text" name="price" id="price" placeholder="User Name"
-            class="w-1/6 shadow-lg block bg-gray-50 rounded-md text-gray-700 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" 
-            v-model="user_name"
-        >
         <textarea
             class="my-4 shadow-lg block bg-gray-50 rounded-md w-full text-gray-700 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
             rows="5"
@@ -271,24 +267,30 @@ function DeleteItem() {
 }
 // import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
-const user_name = ref("")
 const context = ref("")
 
-function uploadComment() {
-    const response = axios.put(req_url+'/comments', null, { 
-        params: { 
-            post_id: route.params.id,
-            user_name: user_name.value, 
-            context: context.value
-        } 
-    })
-    .then(response => {
-        // router.push("/readmore/"+response.data.id)
-        router.go(0);
-    })
-    .catch(error => {
-        console.log(error.message)
-    });
-}
+import { getCurrentUser } from 'aws-amplify/auth';
+async function uploadComment() {
+    try {
+        const user = await getCurrentUser();
 
+        const response = axios.put(req_url+'/comments', null, { 
+            params: { 
+                post_id: route.params.id,
+                user_name: user.username, 
+                context: context.value
+            } 
+        })
+        .then(response => {
+            // router.push("/readmore/"+response.data.id)
+            router.go(0);
+        })
+        .catch(error => {
+            console.log(error.message)
+        });
+
+    } catch (err) {
+        console.log(err);
+    }
+}
 </script>
