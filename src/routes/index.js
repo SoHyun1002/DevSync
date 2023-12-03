@@ -9,6 +9,7 @@ import Blank from '@/pages/Blank.vue'
 import CodeReviews from '@/pages/CodeReviews.vue'
 import Forms from '@/pages/Forms.vue'
 import ReadMore from '@/pages/ReadMore.vue'
+import Profile from '@/pages/Profile.vue'
 
 
 
@@ -26,6 +27,10 @@ const routes = [
   {
     path: '/dashboard', // the url
     component: Dashboard, // view rendered
+  },
+  {
+    path: '/profile', // the url
+    component: Profile, // view rendered
   },
   {
     path: '/home', // the url

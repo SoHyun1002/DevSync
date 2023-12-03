@@ -4,7 +4,7 @@
             <!-- Mobile hamburger -->
             <button
               class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
-              @click="toggleSideMenu"
+              @click="props.toggleSideMenu"
               aria-label="Menu"
             >
                 <MenuIcon class="w-6 h-6" aria-hidden="true" />
@@ -117,7 +117,6 @@
                 </li>
               <!-- Profile menu -->
               <li class="relative">
-                {{username}}
                 <button
                   class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
                   @click="toggleProfileMenu"
@@ -143,13 +142,13 @@
                     aria-label="submenu"
                   >
                     <li class="flex">
-                      <a
+                      <router-link 
+                        to="/profile"
                         class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="#"
                       >
                         <OutlinePersonIcon class="w-4 h-4 mr-3" aria-hidden="true" />
                         <span>프로필</span>
-                      </a>
+                      </router-link>
                     </li>
                     <li class="flex">
                       <a
@@ -207,36 +206,40 @@ function toggleProfileMenu() {
 }
 
 
-const { toggleSideMenu } = defineProps(['toggleSideMenu']);
+// const props = defineProps(['toggleSideMenu', 'username']);
+const props = defineProps({
+  toggleSideMenu: Function,
+  // username: String
+});
 
 // logout
 
 import { signOut, getCurrentUser } from 'aws-amplify/auth';
 import { ConsoleLogger } from 'aws-amplify/utils';
 
+
 async function handleSignOut() {
   try {
     await signOut();
-    username.value = ''
+    // props.username = ''
     // isModalOpen.value = true
   } catch (error) {
     console.log('error signing out: ', error);
   }
 }
 
-const username = ref('')
 
-onMounted(()=>{
-  currentAuthenticatedUser()
-})
-async function currentAuthenticatedUser() {
-  try {
-    const user = await getCurrentUser();
-    username.value = user.username
-    console.log(user)
-  } catch (err) {
-    console.log(err);
-  }
-}
+// onMounted(()=>{
+//   currentAuthenticatedUser()
+// })
+// async function currentAuthenticatedUser() {
+//   try {
+//     const user = await getCurrentUser();
+//     props.username = user.username
+//     console.log(user)
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 </script>

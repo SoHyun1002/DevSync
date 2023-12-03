@@ -52,7 +52,7 @@
 <hr class="dark:border-gray-400">
 <div 
     class="px-4 py-4 my-8 bg-white rounded-xl shadow-md dark:bg-gray-800 dark:text-gray-300"
-    v-for="comment in post.comments"
+    v-for="(comment, index) in post.comments"
 >
     <div class="flex items-center px-8 py-4">
         <img
@@ -64,6 +64,13 @@
         <p class=" px-3 text-lg text-gray-700 dark:text-gray-300">
             {{ comment.user_name }}
         </p>
+        <button
+        class="flex items-right justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray ml-auto"
+        aria-label="Delete"
+        @click="DeleteComment(index)"
+        >
+            <TrashIcon class="w-5 h-5"/>
+        </button>
     </div>
     <hr class="my-2 mx-3 dark:border-gray-400">
     <div class="px-6 py-4">
@@ -264,6 +271,20 @@ function DeleteItem() {
     } catch (err) {
         console.error(err)
     }
+}
+function DeleteComment(index) {
+    const response = axios.delete(req_url+'/comments', {
+        params:{
+            post_id: route.params.id,
+            index: index
+        }
+    })
+    .then(response => {
+            router.go(0);
+    })
+    .catch(error => {
+        console.log(error.message)
+    });
 }
 // import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
