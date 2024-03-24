@@ -12,10 +12,10 @@
                 로그인
               </h1>
               <label class="block text-sm">
-                <span class="text-gray-700 dark:text-gray-400">ID</span>
+                <span class="text-gray-700 dark:text-gray-400">Email</span>
                 <input
                   class="rounded-md bg-gray-100 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="ID"
+                  placeholder="Enter your Email"
                   v-model="user_id"
                 />
               </label>
@@ -23,7 +23,7 @@
                 <span class="text-gray-700 dark:text-gray-400">Password</span>
                 <input
                   class="rounded-md block w-full mt-1 bg-gray-100 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="PW"
+                  placeholder="Enter your Password"
                   type="password"
                   v-model="user_password"
                 />
