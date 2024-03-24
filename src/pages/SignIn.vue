@@ -71,22 +71,20 @@
               </button> -->
 
               <p class="mt-4">
-                <a
+                <router-link
                   class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  href="./forgot-password"
+                  to="/forgot-password"
                 >
                   비밀번호를 잊으셨나요?
-                </a>
+                </router-link>
               </p>
-
-
               <p class="mt-1">
-                <a
+                <router-link
                   class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  href="./create-account"
+                  to="/signup"
                 >
                   계정 생성하기
-                </a>
+                </router-link>
               </p>
             </div>
           </div>
