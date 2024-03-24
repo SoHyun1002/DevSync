@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "devsyn013820ae",
+    "resourceNameTruncated": "devsynb4f6c06b",
     "userPoolName": "DevSync",
     "autoVerifiedAttributes": [
       "email"
@@ -32,15 +32,12 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "DevSyn013820ae_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "DevSynb4f6c06b_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "013820ae",
+    "sharedId": "b4f6c06b",
     "resourceName": "DevSync",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
-    "usernameAttributes": [
-      "email"
-    ],
     "useDefault": "manual",
     "userPoolGroups": false,
     "userPoolGroupList": [],

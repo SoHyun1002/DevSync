@@ -12,11 +12,11 @@
                 로그인
               </h1>
               <label class="block text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Email</span>
+                <span class="text-gray-700 dark:text-gray-400">Username</span>
                 <input
                   class="rounded-md bg-gray-100 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Enter your Email"
-                  v-model="user_id"
+                  placeholder="Enter your Usernmae"
+                  v-model="username"
                 />
               </label>
               <label class="block mt-4 text-sm">
@@ -25,7 +25,7 @@
                   class="rounded-md block w-full mt-1 bg-gray-100 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Enter your Password"
                   type="password"
-                  v-model="user_password"
+                  v-model="password"
                 />
               </label>
 
@@ -86,6 +86,13 @@
                   계정 생성하기
                 </router-link>
               </p>
+              <p class="mt-4">
+                <div
+                  class="text-sm font-medium text-red-600 dark:text-red-400"
+                >
+                  {{ error_message }}
+                </div>
+              </p>
             </div>
           </div>
         </div>
@@ -98,20 +105,43 @@ import { signIn } from 'aws-amplify/auth';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-const user_id = ref('')
-const user_password = ref('')
+const username = ref('')
+const password = ref('')
 
-const error_message = ref('please try to login.')
+const error_message = ref('')
 
 const router = useRouter();  
 
 async function login() {
   try {
-    const { isSignedIn, nextStep } = await signIn({username: user_id.value, password: user_password.value});
-    // router.go(-1)
+    const { isSignedIn, nextStep } = await signIn({ 
+      username: username.value, 
+      password: password.value 
+    });
+
     router.push("/home")
   } catch (error) {
-    console.log('error signing in', error);
+    console.log(error.name, error.message);
+    if (error.name == "EmptySignInUsername") {
+      error_message.value = "유저이름을 입력해주세요."
+    }
+    else if (error.name == "EmptySignInPassword") {
+      error_message.value = "비밀번호를 입력해주세요."
+    }
+    else if (error.name == "UserAlreadyAuthenticatedException") {
+      error_message.value = "이미 로그인 상태입니다."
+    }
+    else if (error.name == "NotAuthorizedException") {
+      if (error.message.includes('Incorrect username or password.')) {
+        error_message.value = "비밀번호가 일치하지 않습니다."
+      }
+      else {
+        error_message.value = error
+      }
+    }
+    else {
+      error_message.value = error
+    }
   }
 }
 </script>
