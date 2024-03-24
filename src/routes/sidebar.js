@@ -37,11 +37,11 @@ const routes = [
     routes: [
       // submenu
       {
-        path: '/login',
+        path: '/signin',
         name: '로그인',
       },
       {
-        path: '/create-account',
+        path: '/signup',
         name: '회원 가입',
       },
       {

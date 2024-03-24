@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import Dashboard from '@/pages/Dashboard.vue'
 import Home from '@/pages/Home.vue'
 import Page404 from '@/pages/Page404.vue'
-import Login from '@/pages/Login.vue'
-import CreateAccount from '@/pages/CreateAccount.vue'
+import SignIn from '@/pages/SignIn.vue'
+import SignUp from '@/pages/SignUp.vue'
 import ForgotPassword from '@/pages/ForgotPassword.vue'
 import Blank from '@/pages/Blank.vue'
 import CodeReviews from '@/pages/CodeReviews.vue'
@@ -37,12 +37,12 @@ const routes = [
     component: Home, // view rendered
   },
   {
-    path: '/login', // the url
-    component: Login, // view rendered
+    path: '/signin', // the url
+    component: SignIn, // view rendered
   },
   {
-    path: '/create-account', // the url
-    component: CreateAccount, // view rendered
+    path: '/signup', // the url
+    component: SignUp, // view rendered
   },
   {
     path: '/forgot-password', // the url
@@ -88,11 +88,11 @@ const routes = [
 //     path: '/tables',
 //     component: Tables,
 //   },
-  // {
-  //   path: '/:pathMatch(.*)*',
-  //   redirect: '/404'
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/404'
     
-  // },
+  },
   {
     path: '/404',
     component: Page404,

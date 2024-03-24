@@ -4,6 +4,9 @@ const plugin = require('tailwindcss/plugin')
 const Color = require('color')
 
 module.exports = {
+  devServer: {
+    historyApiFallback: true,
+  },
   darkMode: 'class',
   // content: ['public/**/*.html'],
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],

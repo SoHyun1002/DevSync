@@ -280,7 +280,8 @@ function DeleteComment(index) {
         }
     })
     .then(response => {
-            router.go(0);
+        // router.go(0);
+        // router.push("#/home")
     })
     .catch(error => {
         console.log(error.message)
